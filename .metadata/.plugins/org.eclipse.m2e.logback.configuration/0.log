@@ -1159,3 +1159,5 @@ Caused by: org.eclipse.core.runtime.CoreException: Cannot determine URI for '/fi
 2021-09-11 12:51:38,483 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Studium\Desktop\test_ase\Finanztool\finanzplaner\src\main\resources
 2021-09-11 12:51:38,487 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-09-11 12:51:38,488 [Worker-17: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\Studium\Desktop\test_ase\Finanztool\finanzplaner\src\test\resources
+2021-09-12 11:50:45,763 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-09-12 11:53:24,650 [Worker-0: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
