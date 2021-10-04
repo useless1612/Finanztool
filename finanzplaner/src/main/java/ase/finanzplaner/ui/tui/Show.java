@@ -1,20 +1,12 @@
 package ase.finanzplaner.ui.tui;
 
-import java.util.concurrent.Callable;
+import ase.finanzplaner.core.Read;
 
-import ase.finanzplaner.Read;
-import picocli.CommandLine.Command;
-import picocli.CommandLine.Parameters;
+public class Show {
 
-@Command(name = "show", description = "Show all transactions and sum of account")
-public class Show implements Callable<Integer> {
-    @Parameters(paramLabel = "ACCOUNT")
-    String account;
-
-    @Override
-    public Integer call(){
+    public Integer call(String account){
         
-        Read.show(this.account);
+        Read.show(account);
         return 0;
 
     }

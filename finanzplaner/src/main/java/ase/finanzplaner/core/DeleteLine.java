@@ -1,4 +1,4 @@
-package ase.finanzplaner;
+package ase.finanzplaner.core;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,7 +13,6 @@ public class DeleteLine {
         File inputFile = new File("~/.finanztool/accounts/" + account);
         File tempFile = new File("~/.finanztool/accounts/" + account + ".tmp");
 
-        
         try {
             
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -46,25 +45,10 @@ public class DeleteLine {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
-
-
-        
     }
 
     public static void accdestroy(String account) {
-
-
         File file = new File("~/.finanztool/accounts/" + account);
         file.delete();
-
-
     }
-
-
-
-
-
-
-    
 }

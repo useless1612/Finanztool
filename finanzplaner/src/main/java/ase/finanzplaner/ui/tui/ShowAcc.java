@@ -1,15 +1,11 @@
 package ase.finanzplaner.ui.tui;
 
 import java.util.ArrayList;
-import java.util.concurrent.Callable;
 
-import ase.finanzplaner.Read;
-import picocli.CommandLine.Command;
+import ase.finanzplaner.core.Read;
 
-@Command(name = "showacc", description = "Show all existing accounts")
-public class ShowAcc implements Callable<Integer> {
+public class ShowAcc {
 
-    @Override
     public Integer call(){
         ArrayList<String> acclist = new ArrayList<String>();
 

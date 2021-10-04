@@ -1,4 +1,4 @@
-package ase.finanzplaner;
+package ase.finanzplaner.core;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -7,9 +7,6 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
-
-
-
 
 
 public class Read {
@@ -80,7 +77,6 @@ public class Read {
         }
         return sum;
 
-
     }
 
     public static ResultForDiff showdiff(String account) {
@@ -92,7 +88,6 @@ public class Read {
         BigDecimal possum = new BigDecimal(0);
         BigDecimal negsum = new BigDecimal(0);
         int amountInt = 0;
-
 
 
         StringBuilder sBuilder = new StringBuilder();
@@ -138,12 +133,6 @@ public class Read {
         return new ResultForDiff(possum, negsum);
 
         // return sum;
-
-
-
-
-        
-
     }
 
     public static ArrayList<String> showacc() {
@@ -165,7 +154,5 @@ public class Read {
             // }
         }
         return acclist;
-
     }
-    
 }

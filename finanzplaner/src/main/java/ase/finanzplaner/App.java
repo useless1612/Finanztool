@@ -3,7 +3,8 @@ package ase.finanzplaner;
 import picocli.CommandLine;
 import picocli.CommandLine.Command;
 
-import ase.finanzplaner.ui.tui.*;
+import ase.finanzplaner.ui.*;
+import ase.finanzplaner.ui.tui.TuiController;
 
 /**
  * Hello world!
@@ -21,6 +22,10 @@ import ase.finanzplaner.ui.tui.*;
 })
 public class App {
     public static void main( String[] args ) {
+
+        UiController uiController = new TuiController();
+        UiControllerProvider.registerUiController(uiController);
+
         int exitCode = new CommandLine(new App()).execute(args);
         System.exit(exitCode);
     }

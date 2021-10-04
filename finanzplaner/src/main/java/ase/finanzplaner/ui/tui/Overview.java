@@ -1,21 +1,22 @@
 package ase.finanzplaner.ui.tui;
 
-import java.util.concurrent.Callable;
+import ase.finanzplaner.core.Read;
+import ase.finanzplaner.core.ResultForDiff;
 
-import ase.finanzplaner.Overviewwrapper;
-import ase.finanzplaner.Read;
-import picocli.CommandLine.Command;
-import picocli.CommandLine.Parameters;
-
-@Command(name = "overview", description = "Gives an Overview over an existing Account")
-public class Overview implements Callable<Integer> {
-    @Parameters(paramLabel = "ACCOUNT")
+public class Overview {
+    
     String account;
 
-    @Override
-    public Integer call(){
+    public Integer call(String account){
         
-        Overviewwrapper.overview(this.account);
+        Read.show(account);
+        ResultForDiff result = Read.showdiff(account);
+        
+        System.out.println( "your incomes amount to: " + result.getFirst().toString() + "€");
+
+        System.out.println("your spendings amount to: " + result.getSecond().toString() + "€");
+
+        System.out.println("your account balance is: " + Read.sum(account) + "€");
         return 0;
 
     }

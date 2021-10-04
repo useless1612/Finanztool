@@ -1,20 +1,12 @@
 package ase.finanzplaner.ui.tui;
 
-import java.util.concurrent.Callable;
+import ase.finanzplaner.core.Read;
 
-import ase.finanzplaner.Read;
-import picocli.CommandLine.Command;
-import picocli.CommandLine.Parameters;
+public class Sum {
 
-@Command(name = "sum", description = "Summarize account")
-public class Sum implements Callable<Integer> {
-    @Parameters(paramLabel = "ACCOUNT")
-    String account;
-
-    @Override
-    public Integer call(){
+    public Integer call(String account){
         
-        System.out.println(Read.sum(this.account) + "€");
+        System.out.println(Read.sum(account) + "€");
         // Read.sum(this.account);
         return 0;
 

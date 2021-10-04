@@ -1,4 +1,4 @@
-package ase.finanzplaner;
+package ase.finanzplaner.core;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;

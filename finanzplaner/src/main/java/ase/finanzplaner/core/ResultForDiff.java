@@ -1,4 +1,4 @@
-package ase.finanzplaner;
+package ase.finanzplaner.core;
 
 import java.math.BigDecimal;
 
