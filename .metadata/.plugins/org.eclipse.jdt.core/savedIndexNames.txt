@@ -1,8 +1,10 @@
-INDEX VERSION 1.131+C:\Users\Studium\Desktop\test_ase\Finanztool\.metadata\.plugins\org.eclipse.jdt.core
-514456553.index
-1217659174.index
-826232156.index
-1027128977.index
-255460352.index
+INDEX VERSION 1.131+F:\pascal\ASE\.metadata\.plugins\org.eclipse.jdt.core
+593455044.index
+1624839548.index
+3322521350.index
+1067052335.index
+1500087946.index
+1259202984.index
+3237097883.index
+2437239131.index
 1229937574.index
-1783395747.index
