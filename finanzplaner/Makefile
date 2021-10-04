@@ -14,6 +14,9 @@ clean:
 fat-jar:
 	mvn package assembly:single
 
+coverage:
+	mvn jacoco:prepare-agent test jacoco:report
+
 install: fat-jar .bin/fz
 
 update-symlink:
