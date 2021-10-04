@@ -1,0 +1,2 @@
+#!/usr/bin/env sh
+java -jar /mnt/f/pascal/ASE/finanzplaner/.bin/fz.jar $@

@@ -2,6 +2,7 @@ package ase.finanzplaner.ui.tui;
 
 import java.util.concurrent.Callable;
 
+import ase.finanzplaner.Write;
 import picocli.CommandLine.Command;
 import picocli.CommandLine.Parameters;
 
@@ -23,6 +24,7 @@ public class Add implements Callable<Integer>{
     @Override 
     public Integer call() {
         System.out.printf("Called function call with account '%s' and transaction '%s %s %s'\n", this.account, this.date, this.amount, this.description);
+        Write.add(this.account, this.date, this.amount, this.description);
         return 0;
     }
 }
