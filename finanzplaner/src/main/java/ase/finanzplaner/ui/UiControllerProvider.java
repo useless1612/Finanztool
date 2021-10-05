@@ -13,7 +13,7 @@ public class UiControllerProvider {
     }
 
     public static UiController getUiController() throws UnregisteredUiControllerException {
-        if (uiControllerProvider == null) {
+        if (uiControllerProvider == null || uiControllerProvider.getCurrentUiController() == null) {
             throw new UnregisteredUiControllerException();
         }
         return UiControllerProvider.uiControllerProvider.getCurrentUiController();
