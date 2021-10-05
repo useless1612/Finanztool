@@ -10,9 +10,7 @@ public class Calculate {
     public static BigDecimal sumOfAccount(String account){
         String filename = "~/.finanztool/accounts/" + account;
         String strLine = "";
-        String date;
         String amount;
-        String description;
         BigDecimal sum = new BigDecimal(0);
     
     
@@ -21,25 +19,19 @@ public class Calculate {
         try {
             BufferedReader bReader = new BufferedReader(new FileReader(filename));
             for (strLine = bReader.readLine(); strLine != null; strLine = bReader.readLine())
-            //while (strLine != null)
             {
                sBuilder.append(strLine);
                sBuilder.append(System.lineSeparator());
                //amount lesen und addieren
                String[] dataParts = strLine.split("\\|");
-               //Arrays.asList(dataParts).forEach(System.out::println);
-               date = dataParts[0];     //wird hier eigentlich nicht gebraucht
                amount = dataParts[1];
-               //System.out.println(amount);
-               description = dataParts[2];      // wird hier eigentlich nicht gebraucht
                sum = sum.add(new BigDecimal(amount));
     
-            //    System.out.println(strLine);
     
            }
            bReader.close();
            
-        //    System.out.println(sum);
+
     
         } catch (IOException e) {
             // TODO Auto-generated catch block
@@ -52,9 +44,7 @@ public class Calculate {
     public static ResultForDiff showIncomeAndExpenses(String account) {
         String filename = "~/.finanztool/accounts/" + account;
         String strLine = "";
-        String date;
         String amount;
-        String description;
         BigDecimal possum = new BigDecimal(0);
         BigDecimal negsum = new BigDecimal(0);
         int amountInt = 0;
@@ -65,15 +55,12 @@ public class Calculate {
         try {
             BufferedReader bReader = new BufferedReader(new FileReader(filename));
             for (strLine = bReader.readLine(); strLine != null; strLine = bReader.readLine())
-            //while (strLine != null)
             {
                sBuilder.append(strLine);
                sBuilder.append(System.lineSeparator());
                //amount lesen und addieren
                String[] dataParts = strLine.split("\\|");
-               date = dataParts[0];     //wird hier eigentlich nicht gebraucht
                amount = dataParts[1];
-               description = dataParts[2];      // wird hier eigentlich nicht gebraucht
                amountInt = Integer.parseInt(amount);
     
                
@@ -97,8 +84,6 @@ public class Calculate {
         }
         
         return new ResultForDiff(possum, negsum);
-    
-        // return sum;
     }
     
 }
