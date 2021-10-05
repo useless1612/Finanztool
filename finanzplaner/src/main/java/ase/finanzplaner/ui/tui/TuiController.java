@@ -5,7 +5,7 @@ import ase.finanzplaner.ui.UiController;
 public class TuiController implements UiController {
 
     public Integer accDestroy(String account) {
-        AccDestroy callable = new AccDestroy();
+        DeleteAccount callable = new DeleteAccount();
         return callable.call(account);
     }
 

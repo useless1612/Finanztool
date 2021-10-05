@@ -7,9 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class DeleteLine {
+public class DeleteOperations {
 
-    public static void deleterow(String account, int lineToRemove){
+    public static void deleteline(String account, int lineToRemove){
         File inputFile = new File("~/.finanztool/accounts/" + account);
         File tempFile = new File("~/.finanztool/accounts/" + account + ".tmp");
 
@@ -22,10 +22,8 @@ public class DeleteLine {
             while((currentLine = reader.readLine()) != null) {
                 actualLine++;
                 // trim newline when comparing with lineToRemove            
-                String trimmedLine = currentLine.trim();
                 if(actualLine == lineToRemove) continue;
 
-                // if(trimmedLine.equals(lineToRemove)) continue;
                 writer.write(currentLine + System.getProperty("line.separator"));
             }
             writer.close(); 
@@ -47,7 +45,7 @@ public class DeleteLine {
         }
     }
 
-    public static void accdestroy(String account) {
+    public static void deleteAccount(String account) {
         File file = new File("~/.finanztool/accounts/" + account);
         file.delete();
     }

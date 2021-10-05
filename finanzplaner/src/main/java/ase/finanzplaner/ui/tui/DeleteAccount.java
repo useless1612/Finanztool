@@ -1,12 +1,12 @@
 package ase.finanzplaner.ui.tui;
 
-import ase.finanzplaner.core.DeleteLine;
+import ase.finanzplaner.core.DeleteOperations;
 
-public class AccDestroy {
+public class DeleteAccount {
 
     public Integer call(String account) {
         System.out.printf("Called function call with account '%s'\n", account);
-        DeleteLine.accdestroy(account);
+        DeleteOperations.deleteAccount(account);
         return 0;
     }
 }

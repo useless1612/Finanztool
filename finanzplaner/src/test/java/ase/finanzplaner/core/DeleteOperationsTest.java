@@ -11,7 +11,7 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class DeleteLineTest {
+public class DeleteOperationsTest {
 
 
 private final static PrintStream standardOut = System.out;
@@ -46,10 +46,10 @@ private final static ByteArrayOutputStream outputStreamCaptor = new ByteArrayOut
 
 
     @Test
-    void testDeleterow() {
+    void testDeleteline() {
         // System.setOut(standardOut);
         // System.setOut(new PrintStream(outputStreamCaptor));
-        DeleteLine.deleterow("testaccount", 3);
+        DeleteOperations.deleteline("testaccount", 3);
 
         Read.show("testaccount");
         assertEquals("12.3.2021|1|description;" + System.getProperty("line.separator") + "12.3.2021|2|description;" + System.getProperty("line.separator") + "12.3.2021|4|description;", outputStreamCaptor.toString().trim());
@@ -62,9 +62,9 @@ private final static ByteArrayOutputStream outputStreamCaptor = new ByteArrayOut
 
 
     @Test
-    void testDeleteacc() {
+    void testDeleteAcc() {
         Boolean exists = false;
-        DeleteLine.accdestroy("testaccount");
+        DeleteOperations.deleteAccount("testaccount");
         File file = new File("~/.finanztool/accounts/testaccount");
 
         if(file.exists() && !file.isDirectory()) { 

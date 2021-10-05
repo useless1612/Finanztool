@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.PrintStream;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import org.junit.jupiter.api.AfterEach;
@@ -24,31 +23,13 @@ private final static ByteArrayOutputStream outputStreamCaptor = new ByteArrayOut
 
 
 
-// @BeforeEach
-// public void createTestAcc() {
-//     Write.add("testaccount", "12.3.2021", "1", "description");
-//     // System.setOut(new PrintStream(outputStreamCaptor));
-    
-// }
-
-
-// @BeforeAll
-// public static void makeClean(){
-//     File file = new File("~/.finanztool/accounts/testaccount");
-//     file.delete();
-// }
 
 @BeforeEach
 public void setUp() {
 Write.add("testaccount", "12.3.2021", "1", "description");
-// System.setOut(new PrintStream(outputStreamCaptor));
     
 }
 
-// @AfterEach
-// public void tearDown() {
-// System.setOut(standardOut);
-// }
 
 @AfterEach
 public void deleteAccount() {
@@ -73,56 +54,6 @@ System.setOut(standardOut);
     }
 
 
-    @Test
-    void testSum() {
-        BigDecimal checksum = new BigDecimal(1);
-        Read.sum("testaccount");
-        assertEquals(checksum, Read.sum("testaccount"));  
-
-
-    }
-
-    @Test
-    void testSum_add() {
-        BigDecimal checksum = new BigDecimal(16);
-        Write.add("testaccount", "12.3.2021", "15", "description");
-        Read.sum("testaccount");
-        assertEquals(checksum, Read.sum("testaccount"));  
-
-    }
-
-
-    @Test
-    void testSum_subtract() {
-        BigDecimal checksum = new BigDecimal(11);
-        Write.add("testaccount", "12.3.2021", "15", "description");
-        Write.add("testaccount", "12.3.2021", "-5", "description");
-        Read.sum("testaccount");
-        assertEquals(checksum, Read.sum("testaccount"));  
-
-    }
-
-    @Test
-    void testShowdiff() {
-        BigDecimal checksumpos = new BigDecimal(16);
-        BigDecimal checksumneg = new BigDecimal(-5);
-
-        Write.add("testaccount", "12.3.2021", "15", "description");
-        Write.add("testaccount", "12.3.2021", "-5", "description");
-        ResultForDiff result = Read.showdiff("testaccount");
-        System.out.println(checksumneg);
-        System.out.println(checksumpos);
-
-        System.out.println( "your incomes amount to: " + result.getFirst().toString() + "€");
-
-        System.out.println("your spendings amount to: " + result.getSecond().toString() + "€");
-
-        assertEquals(checksumpos, result.getFirst());
-        assertEquals(checksumneg, result.getSecond());
-
-        
-
-    }
 
     @Test
     void testShowacc() {

@@ -57,10 +57,5 @@ public class WriteTest {
 
 
 
-    // @AfterAll
-    // public static void deleteAccount() {
-    // // den testaccount löschen
-    // File file = new File("~/.finanztool/accounts/testaccount");
-    // file.delete();
-    // }
+
 }
